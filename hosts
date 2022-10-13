@@ -1,0 +1,22 @@
+
+[zabbix-agent] 
+192.168.0.103
+192.168.0.104
+192.168.0.105
+192.168.0.106
+[zabbix-server]
+192.168.0.108
+[postgres_cluster:children]
+zabbix-server
+zabbix-agent
+
+
+
+[all:vars]
+ansible_connection='ssh'
+ansible_ssh_port='22'
+ansible_user='root'
+ansible_ssh_pass='1234'  # "sshpass" package is required for use "ansible_ssh_pass"
+# ansible_ssh_private_key_file=
+# ansible_python_interpreter='/usr/bin/python3'  # is required for use python3
+
